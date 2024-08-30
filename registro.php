@@ -1,4 +1,5 @@
 <?php
+/*
 // Conectar ao banco de dados
 $servername = "localhost";
 $username = "root"; // Usuário padrão do MAMP
@@ -10,6 +11,10 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("Conexão falhou: " . $conn->connect_error);
 }
+*/
+
+// Incluir o arquivo de conexão
+include 'conecta.php';
 
 // Verificar se há dados enviados via GET (usando HTML sem form)
 if (isset($_GET['nome_usuario']) && isset($_GET['senha']) && isset($_GET['email'])) {
