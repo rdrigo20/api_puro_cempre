@@ -18,7 +18,10 @@ if (!isset($_SESSION['nome_usuario'])) {
 </head>
 <body>
     <h2>Área de Pegar</h2>
-    <p>Implementar a lógica para visualizar registros aqui.</p>
+    <p>O que você quer pegar ?</p>
+    <!-- Botão para criar news -->
+    <button onclick="window.location.href='pegar_news.php'">news</button>
+    <br><br>
     <a href="controle.php"><button>Painel de Controle</button></a>
 </body>
 </html>
