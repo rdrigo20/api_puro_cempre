@@ -26,6 +26,9 @@ if (isset($_GET['nome_usuario']) && isset($_GET['senha'])) {
     if ($result->num_rows > 0) {
         $_SESSION['nome_usuario'] = $nome_usuario;
         echo "Login bem-sucedido! Sessão iniciada.";
+        // Redirecionar para controle.php após login bem-sucedido
+        header("Location: controle.php");
+        exit();
     } else {
         echo "Usuário ou senha incorretos.";
     }
