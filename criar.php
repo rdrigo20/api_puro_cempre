@@ -19,6 +19,9 @@ if (!isset($_SESSION['nome_usuario'])) {
 <body>
     <h2>Área de Criar</h2>
     <p>O que você deseja criar ?</p>
+    <!-- Botão para criar news -->
+    <button onclick="window.location.href='criar_news.php'">news</button>
+    <br><br>
     <a href="controle.php"><button>Painel de Controle</button></a>
 </body>
 </html>
