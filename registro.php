@@ -1,18 +1,4 @@
 <?php
-/*
-// Conectar ao banco de dados
-$servername = "localhost";
-$username = "root"; // Usuário padrão do MAMP
-$password = "root"; // Senha padrão do MAMP
-$dbname = "banquinho"; // Nome do banco de dados
-
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-if ($conn->connect_error) {
-    die("Conexão falhou: " . $conn->connect_error);
-}
-*/
-
 // Incluir o arquivo de conexão
 include 'conecta.php';
 
