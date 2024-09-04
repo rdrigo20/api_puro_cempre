@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['slug'])) {
     $slug = $_POST['slug'];
 
     // Preparar a consulta para evitar injeções de SQL
-    $stmt = $conn->prepare("SELECT titulo, subtitulo, conteudo, data_cadastro FROM news WHERE slug = ?");
+    $stmt = $conn->prepare("SELECT titulo, subtitulo, conteudo, slug, data_cadastro FROM news WHERE slug = ?");
     $stmt->bind_param("s", $slug);
     $stmt->execute();
     $result = $stmt->get_result();
@@ -52,6 +52,7 @@ $conn->close();
         <h4><?= htmlspecialchars($news['subtitulo']); ?></h4>
         <p><?= nl2br(htmlspecialchars($news['conteudo'])); ?></p>
         <p><small>Publicado em: <?= htmlspecialchars($news['data_cadastro']); ?></small></p>
+        <p><strong>Slug:</strong> <?= htmlspecialchars($news['slug']); ?></p>
         <!--Nao consigo colocar o usuario_cadastro que o ID do usuario, o ideal seria ter o nome do usuario mas isso exigiria um join de tabela -->
         <p><small>Cadastrado por (ID): <?= htmlspecialchars($news['usuario_cadastro']); ?></small></p>
         <p><small>Publicado por: <?= (int) $news['usuario_cadastro']; ?></small></p>
