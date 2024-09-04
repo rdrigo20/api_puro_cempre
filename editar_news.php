@@ -93,7 +93,7 @@ $conn->close();
     <h2>Editar Notícia</h2>
 
     <?php if ($news): ?>
-        <form action="editar_news.php?slug=<?= htmlspecialchars($slug); ?>" method="POST">
+        <form id="editando" action="editar_news.php?slug=<?= htmlspecialchars($slug); ?>" method="POST">
             <input type="hidden" name="slug" value="<?= htmlspecialchars($slug); ?>">
 
             <label for="titulo">Título:</label><br>
@@ -107,11 +107,19 @@ $conn->close();
 
             <input type="submit" value="Atualizar Notícia">
         </form>
+        <!--
+        <script>
+        function redirecionar() {
+        // Fazendo o redirecionamento após o envio do formulário
+        document.getElementById('editando').submit(); // Envia o formulário
+        window.location.href = 'criar.php'; // Redireciona para outra página
+        }
+        </script>-->
     <?php else: ?>
         <p><?= $mensagem; ?></p>
     <?php endif; ?>
 
     <br>
-    <a href="pegar_todas_news.php">Voltar para a Lista de Notícias</a>
+    <a href="controle.php"><button>Painel de Controle</button></a>
 </body>
 </html>

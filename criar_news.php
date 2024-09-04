@@ -86,6 +86,6 @@ $conn->close();
     </form>
 
     <br><br>
-    <a href="controle.php">Voltar para o Painel de Controle</a>
+    <a href="controle.php"><button>Painel de Controle</button></a>
 </body>
 </html>
