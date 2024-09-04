@@ -56,10 +56,13 @@ $conn->close();
         <!--Nao consigo colocar o usuario_cadastro que o ID do usuario, o ideal seria ter o nome do usuario mas isso exigiria um join de tabela -->
         <p><small>Cadastrado por (ID): <?= htmlspecialchars($news['usuario_cadastro']); ?></small></p>
         <p><small>Publicado por: <?= (int) $news['usuario_cadastro']; ?></small></p>
+        <br>
+        <p><a href="editar_news.php?slug=<?= htmlspecialchars($news['slug']); ?>">Editar</a></p>
+        
     <?php elseif (isset($erro)): ?>
         <p><?= $erro; ?></p>
     <?php endif; ?>
-
+    <hr>
     <br>
     
     <a href="pegar_todas_news.php"><button>Todas as News</button></a>
