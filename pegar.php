@@ -23,7 +23,6 @@ if (!isset($_SESSION['nome_usuario'])) {
     <button onclick="window.location.href='pegar_news.php'">news</button>
     <br><br>
     <a href="controle.php"><button>Painel de Controle</button></a>
-    <!--temporário lembrar de tirar essa linha
-    <a href="editar_news.php?slug=garantia">Editar Notícia</a>--> 
+    
 </body>
 </html>
