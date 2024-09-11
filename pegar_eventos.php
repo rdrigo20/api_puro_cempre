@@ -46,7 +46,7 @@ $conn->close();
     <h2>Buscar Evento</h2>
 
     <!-- Formulário para entrada do slug do evento -->
-    <form action="pegar_evento.php" method="POST">
+    <form action="pegar_eventos.php" method="POST">
         <label for="slug">Slug do Evento:</label><br>
         <input type="text" id="slug" name="slug" required><br><br>
         <input type="submit" value="Buscar">
