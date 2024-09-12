@@ -42,7 +42,7 @@ $conn->close();
                         <p><strong>Anexo:</strong> <a href="<?= htmlspecialchars($evento['anexo']); ?>" target="_blank">Ver anexo</a></p>
                     <?php endif; ?>
                     <br>
-                    <p><a href="editar_evento.php?slug=<?= urlencode($evento['slug']); ?>">Editar</a></p>
+                    <p><a href="editar_eventos.php?slug=<?= urlencode($evento['slug']); ?>">Editar</a></p>
                     <hr>
                 </li>
             <?php endwhile; ?>

@@ -107,14 +107,7 @@ $conn->close();
 
             <input type="submit" value="Atualizar Notícia">
         </form>
-        <!--
-        <script>
-        function redirecionar() {
-        // Fazendo o redirecionamento após o envio do formulário
-        document.getElementById('editando').submit(); // Envia o formulário
-        window.location.href = 'criar.php'; // Redireciona para outra página
-        }
-        </script>-->
+        
     <?php else: ?>
         <p><?= $mensagem; ?></p>
     <?php endif; ?>

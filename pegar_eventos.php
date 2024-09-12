@@ -63,7 +63,7 @@ $conn->close();
         <p><small>Última atualização: <?= htmlspecialchars($evento['data_alteracao']); ?></small></p>
         <p><small>Cadastrado por (ID): <?= htmlspecialchars($evento['usuario_cadastro']); ?></small></p>
         <br>
-        <p><a href="editar_evento.php?slug=<?= htmlspecialchars($evento['slug']); ?>">Editar</a></p>
+        <p><a href="editar_eventos.php?slug=<?= htmlspecialchars($evento['slug']); ?>">Editar</a></p>
         
     <?php elseif (isset($erro)): ?>
         <p><?= $erro; ?></p>
