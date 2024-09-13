@@ -58,6 +58,7 @@ $conn->close();
         <p><small>Publicado por: <?= (int) $news['usuario_cadastro']; ?></small></p>
         <br>
         <p><a href="editar_news.php?slug=<?= htmlspecialchars($news['slug']); ?>">Editar</a></p>
+        <p><a href="deletar_news.php?slug=<?= htmlspecialchars($news['slug']); ?>">Deletar</a></p>
         
     <?php elseif (isset($erro)): ?>
         <p><?= $erro; ?></p>
