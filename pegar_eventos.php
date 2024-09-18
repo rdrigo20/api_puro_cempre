@@ -64,6 +64,7 @@ $conn->close();
         <p><small>Cadastrado por (ID): <?= htmlspecialchars($evento['usuario_cadastro']); ?></small></p>
         <br>
         <p><a href="editar_eventos.php?slug=<?= htmlspecialchars($evento['slug']); ?>">Editar</a></p>
+        <p><a href="deletar_eventos.php?slug=<?= urlencode($evento['slug']); ?>">Deletar</a></p>
         
     <?php elseif (isset($erro)): ?>
         <p><?= $erro; ?></p>

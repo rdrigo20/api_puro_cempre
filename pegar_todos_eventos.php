@@ -43,6 +43,7 @@ $conn->close();
                     <?php endif; ?>
                     <br>
                     <p><a href="editar_eventos.php?slug=<?= urlencode($evento['slug']); ?>">Editar</a></p>
+                    <p><a href="deletar_eventos.php?slug=<?= urlencode($evento['slug']); ?>">Deletar</a></p>
                     <hr>
                 </li>
             <?php endwhile; ?>
