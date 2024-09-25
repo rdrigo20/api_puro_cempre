@@ -35,11 +35,20 @@ $conn->close();
 <head>
     <meta charset="UTF-8">
     <title>Login do Usuário</title>
+    <!-- framework da bootstrap --> 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <style type="text/css">
+
+    </style>
+
 </head>
 <body>
     <h2>Login do Usuário</h2>
 
-    <?php if (!$logado): ?><!-- se n tiver nimguem logado --> 
+    
+    <?php if (!$logado): ?><!-- se n tiver ninguem logado --> 
         <input type="text" id="nome_usuario" placeholder="Nome de usuário" required>
         <input type="password" id="senha" placeholder="Senha" required>
         <button onclick="loginUsuario()">Login</button>
