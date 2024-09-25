@@ -45,29 +45,39 @@ $conn->close();
 
 </head>
 <body>
-    <h2>Login do Usuário</h2>
+    <!--Cabeçalho-->
+    <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+        <a href="controle.php" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+            <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+            <span class="fs-4">Simple header</span>
+        </a>
+    </header>
 
-    
-    <?php if (!$logado): ?><!-- se n tiver ninguem logado --> 
-        <input type="text" id="nome_usuario" placeholder="Nome de usuário" required>
-        <input type="password" id="senha" placeholder="Senha" required>
-        <button onclick="loginUsuario()">Login</button>
-        <br><br>
-        <a href="registro.php"><button>Registrar novo usuário</button></a> <!-- Link para a página de registro -->
-    <?php else: ?>
-        <p>Bem-vindo, <?= $_SESSION['nome_usuario']; ?>!</p>
-        <a href="logout.php"><button>Logout</button></a>
-    <?php endif; ?>
+    <center>  
+        <h2>Login do Usuário</h2>
 
-    <script>
-        function loginUsuario() {
-            // Capturar valores dos campos
-            var nome_usuario = document.getElementById('nome_usuario').value;
-            var senha = document.getElementById('senha').value;
+        
+        <?php if (!$logado): ?><!-- se n tiver ninguem logado --> 
+            <input type="text" id="nome_usuario" placeholder="Nome de usuário" required>
+            <input type="password" id="senha" placeholder="Senha" required>
+            <button onclick="loginUsuario()">Login</button>
+            <br><br>
+            <a href="registro.php"><button>Registrar novo usuário</button></a> <!-- Link para a página de registro -->
+        <?php else: ?>
+            <p>Bem-vindo, <?= $_SESSION['nome_usuario']; ?>!</p>
+            <a href="logout.php"><button>Logout</button></a>
+        <?php endif; ?>
 
-            // Redirecionar para a URL com os parâmetros
-            window.location.href = `?nome_usuario=${nome_usuario}&senha=${senha}`;
-        }
-    </script>
+        <script>
+            function loginUsuario() {
+                // Capturar valores dos campos
+                var nome_usuario = document.getElementById('nome_usuario').value;
+                var senha = document.getElementById('senha').value;
+
+                // Redirecionar para a URL com os parâmetros
+                window.location.href = `?nome_usuario=${nome_usuario}&senha=${senha}`;
+            }
+        </script>
+    </center>    
 </body>
 </html>
