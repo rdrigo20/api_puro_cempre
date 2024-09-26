@@ -1,0 +1,55 @@
+/* Adiciona padding a todo o body */
+body {
+    padding: 40px; /* Ajuste o valor conforme necessário */
+    font-family: Arial, sans-serif; /* Define uma fonte padrão */
+    background-color: #f0f0f0; /* Cor de fundo */
+    margin: 0; /* Remove a margem padrão do body */
+}
+
+/* Estiliza os formulários */
+form {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 20px auto; /* Centraliza o formulário na página */
+}
+
+/* Estiliza os botões */
+button, input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover, input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+/* Links dentro do conteúdo */
+a {
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Títulos */
+h2 {
+    color: #333;
+    text-align: center;
+}
+
+/* Parágrafos */
+p {
+    color: #555;
+    font-size: 16px;
+    line-height: 1.6;
+}
