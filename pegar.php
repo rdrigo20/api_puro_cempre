@@ -33,15 +33,15 @@ if (!isset($_SESSION['nome_usuario'])) {
             <span class="fs-4">Simple header</span>
         </a>
     </header>
-    
-    <h2>Área de Pegar</h2>
-    <p>O que você quer pegar ?</p>
-    <!-- Botão para criar news -->
-    <button onclick="window.location.href='pegar_news.php'">news</button>
-    <br>
-    <button onclick="window.location.href='pegar_eventos.php'">eventos</button>
-    <br><br>
-    <a href="controle.php"><button>Painel de Controle</button></a>
-    
+    <center>
+        <h2>Área de Pegar</h2>
+        <p>O que você quer pegar ?</p>
+        <!-- Botão para criar news -->
+        <button onclick="window.location.href='pegar_news.php'">News</button>
+        
+        <button onclick="window.location.href='pegar_eventos.php'">Eventos</button>
+        <br><br>
+        <a href="controle.php"><button>Painel de Controle</button></a>
+    </center>
 </body>
 </html>

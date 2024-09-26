@@ -34,13 +34,15 @@ if (!isset($_SESSION['nome_usuario'])) {
         </a>
     </header>
     
-    <h2>Área de Criar</h2>
-    <p>O que você deseja criar ?</p>
-    <!-- Botão para criar news -->
-    <button onclick="window.location.href='criar_news.php'">news</button>
-    <br>
-    <button onclick="window.location.href='criar_eventos.php'">eventos</button>
-    <br><br>
-    <a href="controle.php"><button>Painel de Controle</button></a>
+    <center>
+        <h2>Área de Criar</h2>
+        <p>O que você deseja criar ?</p>
+        <!-- Botão para criar news -->
+        <button onclick="window.location.href='criar_news.php'">News</button>
+        <!-- Botão para criar eventos -->
+        <button onclick="window.location.href='criar_eventos.php'">Eventos</button>
+        <br><br>
+        <a href="controle.php"><button>Painel de Controle</button></a>
+    </center>
 </body>
 </html>
