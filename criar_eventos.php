@@ -97,10 +97,10 @@ $conn->close();
         <input type="text" id="nome_evento" name="nome_evento" required><br><br>
 
         <label for="descricao_evento">Descrição do Evento:</label><br>
-        <textarea id="descricao_evento" name="descricao_evento" rows="3" required></textarea><br><br>
+        <textarea placeholder="Digite a descrição do evento aqui..." id="descricao_evento" name="descricao_evento" rows="3" required></textarea><br><br>
 
         <label for="conteudo_evento">Conteúdo do Evento:</label><br>
-        <textarea id="conteudo_evento" name="conteudo_evento" rows="5" required></textarea><br><br>
+        <textarea placeholder="Digite o conteudo do evento aqui..." id="conteudo_evento" name="conteudo_evento" rows="5" required></textarea><br><br>
 
         <label for="data_evento">Data do Evento:</label><br>
         <input type="datetime-local" id="data_evento" name="data_evento" required><br><br>
@@ -110,7 +110,7 @@ $conn->close();
 
         <input type="submit" value="Cadastrar Evento">
     </form>
-
+    
     <br><br>
     <a href="controle.php"><button>Painel de Controle</button></a>
 </body>

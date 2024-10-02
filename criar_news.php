@@ -97,7 +97,7 @@ $conn->close();
         <input type="text" id="subtitulo" name="subtitulo" required><br><br>
 
         <label for="conteudo">Conteúdo:</label><br>
-        <textarea id="conteudo" name="conteudo" rows="5" required></textarea><br><br>
+        <textarea placeholder="Digite o conteudo da News aqui..." id="conteudo" name="conteudo" rows="5" required></textarea><br><br>
 
         <input type="submit" value="Cadastrar Notícia">
     </form>
