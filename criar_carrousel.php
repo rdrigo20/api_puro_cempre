@@ -1,4 +1,5 @@
 <?php
+//Para ver os erros caso tenham
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
@@ -76,26 +77,39 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title>Criar Carrossel</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Opcional: incluir CSS externo -->
+    <link rel="stylesheet" href="style.css"> <!-- Referencia o CSS -->
+    <!-- framework da bootstrap --> 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <style type="text/css">
+
+    </style>
+
 </head>
 <body>
-
+<!--Cabeçalho-->
+<header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+    <a href="controle.php" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+        <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+        <span class="fs-4">Painel de Controle</span>
+    </a>
+</header>
 <h2>Upload de Imagem para o Carrossel</h2>
 
 <form action="criar_carrousel.php" method="POST" enctype="multipart/form-data">
     <label for="titulo">Título:</label>
-    <input type="text" name="titulo" id="titulo" required>
-    <br>
+    <input type="text" name="titulo" id="titulo" required><br><br>
+    
     <label for="link">Link (opcional):</label>
-    <input type="url" name="link" id="link">
-    <br>
+    <input type="url" name="link" id="link"><br><br>
+    
     <label for="arquivo">Imagem do Carrossel:</label>
-    <input type="file" name="arquivo" id="arquivo"  required>
-    <br>
-    <button type="submit">Enviar Imagem</button>
-    <br>
+    <input type="file" name="arquivo" id="arquivo"  required><br><br>
+    
+    <button type="submit">Enviar Imagem</button><br>
 </form>
 
     <a href="controle.php"><button>Painel de Controle</button></a>
