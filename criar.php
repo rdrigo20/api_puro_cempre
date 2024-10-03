@@ -41,6 +41,9 @@ if (!isset($_SESSION['nome_usuario'])) {
         <button onclick="window.location.href='criar_news.php'">News</button>
         <!-- Botão para criar eventos -->
         <button onclick="window.location.href='criar_eventos.php'">Eventos</button>
+        <!-- Botão para criar carrousel -->
+        <button onclick="window.location.href='criar_carrousel.php'">Carrosel</button>
+        
         <br><br>
         <a href="controle.php"><button>Painel de Controle</button></a>
     </center>
