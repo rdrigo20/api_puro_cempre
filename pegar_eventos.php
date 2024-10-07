@@ -77,7 +77,10 @@ $conn->close();
         <p><strong>Data do Evento:</strong> <?= htmlspecialchars($evento['data_evento']); ?></p>
         <p><strong>Slug:</strong> <?= htmlspecialchars($evento['slug']); ?></p>
         <p><small>Publicado em: <?= htmlspecialchars($evento['data_cadastro']); ?></small></p>
-        <p><small>Última atualização: <?= htmlspecialchars($evento['data_alteracao']); ?></small></p>
+        <!--só vai aparecer caso tenha ocorrido alteração-->
+        <?php if (!empty($evento['data_alteracao'])): ?>
+            <p><small>Última atualização: <?= htmlspecialchars($evento['data_alteracao']); ?></small></p>
+        <?php endif; ?>
         <p><small>Cadastrado por (ID): <?= htmlspecialchars($evento['usuario_cadastro']); ?></small></p>
         <br>
         <p><a href="editar_eventos.php?slug=<?= htmlspecialchars($evento['slug']); ?>">Editar</a></p>

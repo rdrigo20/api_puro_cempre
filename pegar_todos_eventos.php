@@ -11,7 +11,7 @@ if (!isset($_SESSION['nome_usuario'])) {
 include 'conecta.php';
 
 // Buscar todos os eventos no banco de dados
-$sql = "SELECT * FROM eventos ORDER BY data_evento DESC";
+$sql = "SELECT * FROM eventos ORDER BY data_cadastro DESC";
 $result = $conn->query($sql);
 
 $conn->close();
@@ -53,8 +53,10 @@ $conn->close();
                     <p><strong>Data do Evento:</strong> <?= htmlspecialchars($evento['data_evento']); ?></p>
                     <p><strong>Slug:</strong> <?= htmlspecialchars($evento['slug']); ?></p>
                     <p><small>Publicado em: <?= htmlspecialchars($evento['data_cadastro']); ?></small></p>
-                    <!--Nao consigo colocar a data de atualização-->
-                    <p><small>Última atualização: <?= htmlspecialchars($evento['data_atualizacao']); ?></small></p>
+                    <!--só vai aparecer caso tenha ocorrido alteração-->
+                    <?php if (!empty($evento['data_alteracao'])): ?>
+                        <p><small>Última atualização: <?= htmlspecialchars($evento['data_alteracao']); ?></small></p>
+                    <?php endif; ?>
                     <p><small>Cadastrado por (ID): <?= htmlspecialchars($evento['usuario_cadastro']); ?></small></p>
                     <?php if (!empty($evento['anexo'])): ?>
                         <p><strong>Anexo:</strong> <a href="<?= htmlspecialchars($evento['anexo']); ?>" target="_blank">Ver anexo</a></p>
