@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['slug'])) {
     $slug = $_POST['slug'];
 
     // Preparar a consulta para evitar injeções de SQL
-    $stmt = $conn->prepare("SELECT nome_evento, descricao_evento, conteudo_evento, slug, data_evento, data_cadastro, data_alteracao, usuario_cadastro FROM eventos WHERE slug = ?");
+    $stmt = $conn->prepare("SELECT nome_evento, descricao_evento, conteudo_evento, slug, data_evento, data_cadastro, data_alteracao, usuario_cadastro, anexo FROM eventos WHERE slug = ?");
     $stmt->bind_param("s", $slug);
     $stmt->execute();
     $result = $stmt->get_result();
@@ -77,11 +77,14 @@ $conn->close();
         <p><strong>Data do Evento:</strong> <?= htmlspecialchars($evento['data_evento']); ?></p>
         <p><strong>Slug:</strong> <?= htmlspecialchars($evento['slug']); ?></p>
         <p><small>Publicado em: <?= htmlspecialchars($evento['data_cadastro']); ?></small></p>
+        <p><small>Cadastrado por (ID): <?= htmlspecialchars($evento['usuario_cadastro']); ?></small></p>
         <!--só vai aparecer caso tenha ocorrido alteração-->
         <?php if (!empty($evento['data_alteracao'])): ?>
             <p><small>Última atualização: <?= htmlspecialchars($evento['data_alteracao']); ?></small></p>
         <?php endif; ?>
-        <p><small>Cadastrado por (ID): <?= htmlspecialchars($evento['usuario_cadastro']); ?></small></p>
+        <?php if (!empty($evento['anexo'])): ?>
+            <p><strong>Anexo:</strong> <a href="<?= htmlspecialchars($evento['anexo']); ?>" target="_blank">Ver anexo</a></p>
+        <?php endif; ?>
         <br>
         <p><a href="editar_eventos.php?slug=<?= htmlspecialchars($evento['slug']); ?>">Editar</a></p>
         <p><a href="deletar_eventos.php?slug=<?= urlencode($evento['slug']); ?>">Deletar</a></p>
