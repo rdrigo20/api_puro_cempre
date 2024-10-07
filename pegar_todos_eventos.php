@@ -57,6 +57,7 @@ $conn->close();
                     <!--só vai aparecer caso tenha ocorrido alteração-->
                     <?php if (!empty($evento['data_alteracao'])): ?>
                         <p><small>Última atualização: <?= htmlspecialchars($evento['data_alteracao']); ?></small></p>
+                        <p><small>Atualizado por (ID): <?= htmlspecialchars($evento['usuario_alteracao']); ?></small></p>
                     <?php endif; ?>
                     <?php if (!empty($evento['anexo'])): ?>
                         <p><strong>Anexo:</strong> <a href="<?= htmlspecialchars($evento['anexo']); ?>" target="_blank">Ver anexo</a></p>

@@ -11,7 +11,7 @@ if (!isset($_SESSION['nome_usuario'])) {
 include 'conecta.php';
 
 // Consulta para buscar todas as notícias
-$sql = "SELECT titulo, subtitulo, conteudo, slug, data_cadastro, usuario_cadastro FROM news ORDER BY data_cadastro DESC";
+$sql = "SELECT titulo, subtitulo, conteudo, slug, data_cadastro, usuario_cadastro, data_atualizacao, usuario_alteracao FROM news ORDER BY data_cadastro DESC";
 $result = $conn->query($sql);
 
 $conn->close();
@@ -51,9 +51,14 @@ $conn->close();
                     <h3><?= htmlspecialchars($news['titulo']); ?></h3>
                     <h4><?= htmlspecialchars($news['subtitulo']); ?></h4>
                     <p><?= nl2br(htmlspecialchars($news['conteudo'])); ?></p>
-                    <p><small>Publicado em: <?= htmlspecialchars($news['data_cadastro']); ?></small></p>
                     <p><strong>Slug:</strong> <?= htmlspecialchars($news['slug']); ?></p>
+                    <p><small>Publicado em: <?= htmlspecialchars($news['data_cadastro']); ?></small></p>
                     <p><small>Cadastrado por (ID): <?= htmlspecialchars($news['usuario_cadastro']); ?></small></p>
+                    <!--só vai aparecer caso tenha ocorrido alteração-->
+                    <?php if (($news['data_atualizacao']!= $news['data_cadastro'])): ?>
+                        <p><small>Última atualização: <?= htmlspecialchars($news['data_atualizacao']); ?></small></p>
+                        <p><small>Atualizado por (ID): <?= htmlspecialchars($news['usuario_alteracao']); ?></small></p>
+                    <?php endif; ?>
                     <br>
                     <p><a href="editar_news.php?slug=<?= htmlspecialchars($news['slug']); ?>">Editar</a></p>
                     <p><a href="deletar_news.php?slug=<?= htmlspecialchars($news['slug']); ?>">Deletar</a></p>
