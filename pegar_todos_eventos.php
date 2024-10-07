@@ -53,6 +53,7 @@ $conn->close();
                     <p><strong>Data do Evento:</strong> <?= htmlspecialchars($evento['data_evento']); ?></p>
                     <p><strong>Slug:</strong> <?= htmlspecialchars($evento['slug']); ?></p>
                     <p><small>Publicado em: <?= htmlspecialchars($evento['data_cadastro']); ?></small></p>
+                    <!--Nao consigo colocar a data de atualização-->
                     <p><small>Última atualização: <?= htmlspecialchars($evento['data_atualizacao']); ?></small></p>
                     <p><small>Cadastrado por (ID): <?= htmlspecialchars($evento['usuario_cadastro']); ?></small></p>
                     <?php if (!empty($evento['anexo'])): ?>
