@@ -40,6 +40,9 @@ if (!isset($_SESSION['nome_usuario'])) {
         <button onclick="window.location.href='pegar_news.php'">News</button>
         
         <button onclick="window.location.href='pegar_eventos.php'">Eventos</button>
+        
+        <button onclick="window.location.href='pegar_carrousel.php'">Carrossel</button>
+
         <br><br>
         <a href="controle.php"><button>Painel de Controle</button></a>
     </center>
